@@ -24,9 +24,7 @@ $(document).ready(function () {
     checkServices();
     checkLayout();
 
-    $("#chat_input").keypress((event) => {
-        sendMessage(event);
-    })
+
     // Conversation Radio button change listener.
     $('.conv_radio').click(() => {
         radioToggle();
