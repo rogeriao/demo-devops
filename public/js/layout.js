@@ -76,10 +76,10 @@ const changeLayout = () => {
             '<div class="chat_header" id="chat_header">Chat with Watson</div>' +
             '<div class="chat_body" id="chat_body"></div>' +
             '<div class="chat_footer" id="chat_footer">' +
-            '<input type="text" id="chat_input" class="chat_input" placeholder="Type a message.." onkeypress="return sendMessage(event);" /></div></div>';
+            '<input type="text" id="chat_input" class="chat_input" placeholder="Type a message.."  /></div></div>';
 
         chat_div.setAttribute('class', 'classic')
-
+        document.getElementById("chat_input").setAttribute("onkeypress",'return sendMessage(event)');
         fixChatBodySize('body');
         fixChatBodySize('classic');
         
@@ -151,3 +151,19 @@ const saveLayoutConfigurations = () => {
     }
 
 }
+
+
+
+  function readImageURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                console.log(e.target.result);
+               document.getElementById('bg').setAttribute('src',e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+

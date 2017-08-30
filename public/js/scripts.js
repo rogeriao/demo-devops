@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // Materialize initialization
-    
+
     $('.modal').modal();
     $('ul.tabs').tabs();
 
@@ -15,9 +15,9 @@ $(document).ready(function () {
     var setup = (results) ? decodeURIComponent(results[0].replace(/\+/g, " ")) : null;
 
     if (setup) {
-    
+
         $('#configurationModal').modal('open');
-    
+
     }
 
     // Initial setup
@@ -61,6 +61,10 @@ $(document).ready(function () {
         changePopupSize('classic');
     });
 
+
+    $("#bg_file").change(function () {
+        readImageURL(this);
+    });
 
 });
 
