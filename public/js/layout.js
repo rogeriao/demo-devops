@@ -76,7 +76,7 @@ const changeLayout = () => {
             '<div class="chat_header" id="chat_header">Chat with Watson</div>' +
             '<div class="chat_body" id="chat_body"></div>' +
             '<div class="chat_footer" id="chat_footer">' +
-            '<input type="text" id="chat_input" class="chat_input" placeholder="Type a message.."  /></div></div>';
+            '<input type="text" id="chat_input" class="chat_input" placeholder="Type a message.." onkeypress="return sendMessage(event)"  /></div></div>';
 
         chat_div.setAttribute('class', 'classic')
         document.getElementById("chat_input").setAttribute("onkeypress",'return sendMessage(event)');
